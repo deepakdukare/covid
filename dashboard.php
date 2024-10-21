@@ -17,7 +17,7 @@ if (strlen($_SESSION['aid']==0)) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Covid-Tms | Dashboard</title>
+    <title>Covid-TMS | Dashboard</title>
 
     <!-- Custom fonts for this template-->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@ if (strlen($_SESSION['aid']==0)) {
     <div id="wrapper">
 
         <!-- Sidebar -->
-       <?php include_once('includes/sidebar.php');?>
+        <?php include_once('includes/sidebar.php');?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->

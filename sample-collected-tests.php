@@ -1,13 +1,3 @@
-<?php session_start();
-//DB conncetion
-include_once('includes/config.php');
-//validating Session
-if (strlen($_SESSION['aid']==0)) {
-  header('location:logout.php');
-  } else{
-
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,17 +11,68 @@ if (strlen($_SESSION['aid']==0)) {
 
     <title>Covid-Tms | Sample Collected Tests</title>
 
-    <!-- Custom fonts for this template -->
+    <!-- Custom fonts -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700,800,900" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <!-- Additional custom styles -->
+    <style>
+        body {
+            background-color: #f8f9fc; /* Light background */
+            font-family: 'Nunito', sans-serif;
+        }
+        
+        h1, h6 {
+            color: #2e59d9; /* Main primary color */
+        }
+
+        .card {
+            border-radius: 15px; /* Rounded corners for the cards */
+        }
+
+        .table {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 10px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
+        th {
+            background-color: #4e73df;
+            color: #ffffff;
+        }
+
+        td {
+            background-color: #f1f3f6;
+        }
+
+        .btn-info {
+            background-color: #36b9cc;
+            border-color: #36b9cc;
+            border-radius: 50px; /* Rounded buttons */
+            padding: 8px 20px;
+        }
+
+        .btn-info:hover {
+            background-color: #2c9faf;
+            border-color: #2c9faf;
+        }
+
+        .table-responsive {
+            padding: 10px;
+        }
+    </style>
 
 </head>
 
@@ -41,7 +82,7 @@ if (strlen($_SESSION['aid']==0)) {
     <div id="wrapper">
 
         <!-- Sidebar -->
-  <?php include_once('includes/sidebar.php');?>
+        <?php include_once('includes/sidebar.php'); ?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -51,15 +92,14 @@ if (strlen($_SESSION['aid']==0)) {
             <div id="content">
 
                 <!-- Topbar -->
-<?php include_once('includes/topbar.php');?>
+                <?php include_once('includes/topbar.php'); ?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Sample Collected Tests</h1>
-    
+                    <h1 class="h3 mb-4">Sample Collected Tests</h1>
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
@@ -69,58 +109,53 @@ if (strlen($_SESSION['aid']==0)) {
                         <div class="card-body">
                             <div class="table-responsive">
                                 <form name="assignto" method="post">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Sno.</th>
-                                            <th>Order No.</th>
-                                            <th>Patient Name</th>
-                                            <th>Mobile No.</th>
-                                            <th>Test Type</th>
-                                            <th>Time Slot</th>
-                                            <th>Reg. Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                      <tfoot>
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
                                             <tr>
-                                            <th>Sno.</th>
-                                            <th>Order No.</th>
-                                            <th>Patient Name</th>
-                                            <th>Mobile No.</th>
-                                            <th>Test Type</th>
-                                            <th>Time Slot</th>
-                                            <th>Reg. Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-<?php $query=mysqli_query($con,"select tbltestrecord.OrderNumber,tblpatients.FullName,tblpatients.MobileNumber,tbltestrecord.TestType,tbltestrecord.TestTimeSlot,tbltestrecord.RegistrationDate,tbltestrecord.id as testid from tbltestrecord
-join tblpatients on tblpatients.MobileNumber=tbltestrecord.PatientMobileNumber
-where ReportStatus='Sample Collected'
-    ");
-$cnt=1;
-while($row=mysqli_fetch_array($query)){
-?>
-            
-                                        <tr>
-                                            <td><?php echo $cnt;?></td>
-                                            <td><?php echo $row['OrderNumber'];?></td>
-                                            <td><?php echo $row['FullName'];?></td>
-                                            <td><?php echo $row['MobileNumber'];?></td>
-                                            <td><?php echo $row['TestType'];?></td>
-                                            <td><?php echo $row['TestTimeSlot'];?></td>
-                                             <td><?php echo $row['RegistrationDate'];?></td>
-                                            <td>
-
-                                <a href="test-details.php?tid=<?php echo $row['testid'];?>&&oid=<?php echo $row['OrderNumber'];?>" class="btn btn-info btn-sm">View Details</a> 
-
-                            </td>
-                                        </tr>
-<?php $cnt++;} ?>
-                                    </tbody>
-                                </table>
-                                     </form>
+                                                <th>Sno.</th>
+                                                <th>Order No.</th>
+                                                <th>Patient Name</th>
+                                                <th>Mobile No.</th>
+                                                <th>Test Type</th>
+                                                <th>Time Slot</th>
+                                                <th>Reg. Date</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Sno.</th>
+                                                <th>Order No.</th>
+                                                <th>Patient Name</th>
+                                                <th>Mobile No.</th>
+                                                <th>Test Type</th>
+                                                <th>Time Slot</th>
+                                                <th>Reg. Date</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <?php
+                                            $query = mysqli_query($con, "SELECT tbltestrecord.OrderNumber, tblpatients.FullName, tblpatients.MobileNumber, tbltestrecord.TestType, tbltestrecord.TestTimeSlot, tbltestrecord.RegistrationDate, tbltestrecord.id as testid FROM tbltestrecord JOIN tblpatients ON tblpatients.MobileNumber = tbltestrecord.PatientMobileNumber WHERE ReportStatus = 'Sample Collected'");
+                                            $cnt = 1;
+                                            while ($row = mysqli_fetch_array($query)) {
+                                            ?>
+                                                <tr>
+                                                    <td><?php echo $cnt; ?></td>
+                                                    <td><?php echo $row['OrderNumber']; ?></td>
+                                                    <td><?php echo $row['FullName']; ?></td>
+                                                    <td><?php echo $row['MobileNumber']; ?></td>
+                                                    <td><?php echo $row['TestType']; ?></td>
+                                                    <td><?php echo $row['TestTimeSlot']; ?></td>
+                                                    <td><?php echo $row['RegistrationDate']; ?></td>
+                                                    <td><a href="test-details.php?tid=<?php echo $row['testid']; ?>&&oid=<?php echo $row['OrderNumber']; ?>" class="btn btn-info btn-sm">View Details</a></td>
+                                                </tr>
+                                            <?php
+                                                $cnt++;
+                                            } ?>
+                                        </tbody>
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -131,9 +166,8 @@ while($row=mysqli_fetch_array($query)){
             </div>
             <!-- End of Main Content -->
 
-
             <!-- Footer -->
-    <?php include_once('includes/footer.php');?>
+            <?php include_once('includes/footer.php'); ?>
             <!-- End of Footer -->
 
         </div>
@@ -142,17 +176,17 @@ while($row=mysqli_fetch_array($query)){
     </div>
     <!-- End of Page Wrapper -->
 
-    <!-- Scroll to Top Button-->
-    <?php include_once('includes/footer2.php');?>
+    <!-- Scroll to Top Button -->
+    <?php include_once('includes/footer2.php'); ?>
 
-    <!-- Bootstrap core JavaScript-->
+    <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Core plugin JavaScript-->
+    <!-- Core plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-    <!-- Custom scripts for all pages-->
+    <!-- Custom scripts for all pages -->
     <script src="js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
@@ -161,6 +195,7 @@ while($row=mysqli_fetch_array($query)){
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+
 </body>
+
 </html>
-<?php } ?>

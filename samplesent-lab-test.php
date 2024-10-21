@@ -1,13 +1,13 @@
-<?php session_start();
-//DB conncetion
+<?php 
+session_start();
+//DB connection
 include_once('includes/config.php');
 //validating Session
 if (strlen($_SESSION['aid']==0)) {
   header('location:logout.php');
-  } else{
-
-
+} else {
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,20 +19,46 @@ if (strlen($_SESSION['aid']==0)) {
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Covid-Tms | Sample Sent to lab</title>
+    <title>Covid-TMS | Sample Sent to Lab</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,600,700" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
 
+    <!-- Custom CSS for color scheme -->
+    <style>
+        body {
+            background-color: #f0f4f7;
+        }
+        .card-header {
+            background-color: #006494;
+            color: white;
+        }
+        .btn-info {
+            background-color: #0096c7;
+            border: none;
+        }
+        .btn-info:hover {
+            background-color: #005f73;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+            text-align: center;
+        }
+        .table th {
+            background-color: #e0e1dd;
+        }
+        .page-title {
+            color: #333;
+            font-weight: 600;
+        }
+    </style>
 </head>
 
 <body id="page-top">
@@ -41,7 +67,7 @@ if (strlen($_SESSION['aid']==0)) {
     <div id="wrapper">
 
         <!-- Sidebar -->
-  <?php include_once('includes/sidebar.php');?>
+        <?php include_once('includes/sidebar.php');?>
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -51,76 +77,72 @@ if (strlen($_SESSION['aid']==0)) {
             <div id="content">
 
                 <!-- Topbar -->
-<?php include_once('includes/topbar.php');?>
+                <?php include_once('includes/topbar.php');?>
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Sample Sent to lab</h1>
-    
+                    <h1 class="h3 mb-4 page-title">Sample Sent to Lab</h1>
 
-                    <!-- DataTales Example -->
+                    <!-- DataTable Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <h6 class="m-0 font-weight-bold text-primary">Sample Sent to lab</h6>
+                            <h6 class="m-0 font-weight-bold">Sample Sent to Lab</h6>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
                                 <form name="assignto" method="post">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                    <thead>
-                                        <tr>
-                                            <th>Sno.</th>
-                                            <th>Order No.</th>
-                                            <th>Patient Name</th>
-                                            <th>Mobile No.</th>
-                                            <th>Test Type</th>
-                                            <th>Time Slot</th>
-                                            <th>Reg. Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                      <tfoot>
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
                                             <tr>
-                                            <th>Sno.</th>
-                                            <th>Order No.</th>
-                                            <th>Patient Name</th>
-                                            <th>Mobile No.</th>
-                                            <th>Test Type</th>
-                                            <th>Time Slot</th>
-                                            <th>Reg. Date</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
-                                    <tbody>
-<?php $query=mysqli_query($con,"select tbltestrecord.OrderNumber,tblpatients.FullName,tblpatients.MobileNumber,tbltestrecord.TestType,tbltestrecord.TestTimeSlot,tbltestrecord.RegistrationDate,tbltestrecord.id as testid from tbltestrecord
-join tblpatients on tblpatients.MobileNumber=tbltestrecord.PatientMobileNumber
-where ReportStatus='Sent to Lab'
-    ");
-$cnt=1;
-while($row=mysqli_fetch_array($query)){
-?>
-            
-                                        <tr>
-                                            <td><?php echo $cnt;?></td>
-                                            <td><?php echo $row['OrderNumber'];?></td>
-                                            <td><?php echo $row['FullName'];?></td>
-                                            <td><?php echo $row['MobileNumber'];?></td>
-                                            <td><?php echo $row['TestType'];?></td>
-                                            <td><?php echo $row['TestTimeSlot'];?></td>
-                                             <td><?php echo $row['RegistrationDate'];?></td>
-                                            <td>
-
-                                <a href="test-details.php?tid=<?php echo $row['testid'];?>&&oid=<?php echo $row['OrderNumber'];?>" class="btn btn-info btn-sm">View Details</a> 
-
-                            </td>
-                                        </tr>
-<?php $cnt++;} ?>
-                                    </tbody>
-                                </table>
-                                     </form>
+                                                <th>Sno.</th>
+                                                <th>Order No.</th>
+                                                <th>Patient Name</th>
+                                                <th>Mobile No.</th>
+                                                <th>Test Type</th>
+                                                <th>Time Slot</th>
+                                                <th>Reg. Date</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </thead>
+                                        <tfoot>
+                                            <tr>
+                                                <th>Sno.</th>
+                                                <th>Order No.</th>
+                                                <th>Patient Name</th>
+                                                <th>Mobile No.</th>
+                                                <th>Test Type</th>
+                                                <th>Time Slot</th>
+                                                <th>Reg. Date</th>
+                                                <th>Action</th>
+                                            </tr>
+                                        </tfoot>
+                                        <tbody>
+                                            <?php 
+                                            $query = mysqli_query($con,"SELECT tbltestrecord.OrderNumber, tblpatients.FullName, tblpatients.MobileNumber, tbltestrecord.TestType, tbltestrecord.TestTimeSlot, tbltestrecord.RegistrationDate, tbltestrecord.id AS testid FROM tbltestrecord 
+                                            JOIN tblpatients ON tblpatients.MobileNumber=tbltestrecord.PatientMobileNumber 
+                                            WHERE ReportStatus='Sent to Lab'");
+                                            $cnt = 1;
+                                            while($row = mysqli_fetch_array($query)) {
+                                            ?>
+                                            <tr>
+                                                <td><?php echo $cnt; ?></td>
+                                                <td><?php echo $row['OrderNumber']; ?></td>
+                                                <td><?php echo $row['FullName']; ?></td>
+                                                <td><?php echo $row['MobileNumber']; ?></td>
+                                                <td><?php echo $row['TestType']; ?></td>
+                                                <td><?php echo $row['TestTimeSlot']; ?></td>
+                                                <td><?php echo $row['RegistrationDate']; ?></td>
+                                                <td>
+                                                    <a href="test-details.php?tid=<?php echo $row['testid']; ?>&&oid=<?php echo $row['OrderNumber'];?>" class="btn btn-info btn-sm">View Details</a>
+                                                </td>
+                                            </tr>
+                                            <?php $cnt++; } ?>
+                                        </tbody>
+                                    </table>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -131,9 +153,8 @@ while($row=mysqli_fetch_array($query)){
             </div>
             <!-- End of Main Content -->
 
-
             <!-- Footer -->
-    <?php include_once('includes/footer.php');?>
+            <?php include_once('includes/footer.php'); ?>
             <!-- End of Footer -->
 
         </div>

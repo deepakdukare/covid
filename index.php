@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="Covid-19 Testing Management System">
@@ -18,7 +17,6 @@
   
   <!-- Custom styles -->
   <link href="css/scrolling-nav.css" rel="stylesheet">
-
 </head>
 
 <body id="page-top">
@@ -42,6 +40,18 @@
             <a class="nav-link" href="#prevention">Prevention</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#vaccination">Vaccination</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#testing-centers">Testing Centers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#common-myths">Common Myths</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#resources">Resources</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="new-user-testing.php">Testing</a>
           </li>
           <li class="nav-item">
@@ -56,7 +66,7 @@
   </nav>
 
   <!-- Header Section -->
-  <header class="bg-primary text-white text-center py-5">
+  <header class="text-black text-center py-5" style="background-color: yellow;">
     <div class="container">
       <h1>Covid-19 Testing Management System</h1>
       <p class="lead">Manage and track Covid-19 testing efficiently</p>
@@ -144,21 +154,107 @@
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white py-4">
-    <div class="container text-center">
-      <p>&copy; 2024 Covid-19 Testing Management System | Designed by Deepak Dukare</p>
-      <div>
-        <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
-        <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+  <!-- Vaccination Information Section -->
+  <section id="vaccination" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Vaccination Information</h2>
+      <p class="text-center">Vaccines are safe and effective in preventing Covid-19 and reducing the severity of the disease. Here’s what you need to know:</p>
+      <div class="row">
+        <div class="col-md-4 text-center">
+          <i class="fas fa-syringe fa-3x mb-3"></i>
+          <h5>Types of Vaccines</h5>
+          <p>There are several vaccines authorized for emergency use to combat Covid-19. Each vaccine has its own efficacy and safety profile.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-calendar-check fa-3x mb-3"></i>
+          <h5>Vaccination Schedule</h5>
+          <p>It's important to follow the recommended vaccination schedule for maximum protection. Most vaccines require two doses, while some require only one.</p>
+        </div>
+        <div class="col-md-4 text-center">
+          <i class="fas fa-shield-alt fa-3x mb-3"></i>
+          <h5>Booster Shots</h5>
+          <p>Booster shots may be necessary to maintain immunity. Stay informed about the latest guidelines regarding booster doses.</p>
+        </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Testing Centers Section -->
+  <section id="testing-centers" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Covid-19 Testing Centers</h2>
+      <p class="text-center">Find the nearest testing center to get tested for Covid-19. Below is a list of testing centers available:</p>
+      <ul class="list-unstyled text-center">
+        <li>City Hospital, Main St, Downtown</li>
+        <li>Health Clinic, 2nd Ave, Westside</li>
+        <li>Community Health Center, 3rd St, Eastside</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Common Myths Section -->
+  <section id="common-myths" class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Common Myths About Covid-19</h2>
+      <p class="text-center">Let's debunk some common myths about Covid-19:</p>
+      <ul class="list-unstyled text-center">
+        <li>Myth: Only old people can get infected. <br>Fact: People of all ages can be infected with Covid-19.</li>
+        <li>Myth: Masks are ineffective against the virus. <br>Fact: Masks provide a level of protection and can reduce the spread.</li>
+        <li>Myth: Covid-19 is just like the flu. <br>Fact: Covid-19 is caused by a different virus and can lead to more severe illness.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Resources Section -->
+  <section id="resources" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">Resources for Further Information</h2>
+      <p class="text-center">Stay informed with reliable sources:</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body text-center">
+              <h5 class="card-title">World Health Organization (WHO)</h5>
+              <p class="card-text">Visit the WHO website for the latest updates on Covid-19 guidelines and resources.</p>
+              <a href="https://www.who.int/" target="_blank" class="btn btn-primary">Visit</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body text-center">
+              <h5 class="card-title">Centers for Disease Control and Prevention (CDC)</h5>
+              <p class="card-text">Access essential information about Covid-19 safety and prevention measures.</p>
+              <a href="https://www.cdc.gov/" target="_blank" class="btn btn-primary">Visit</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card border-0 shadow-sm mb-4">
+            <div class="card-body text-center">
+              <h5 class="card-title">Ministry of Health and Family Welfare</h5>
+              <p class="card-text">Get updates and guidelines from India's Ministry of Health regarding Covid-19.</p>
+              <a href="https://www.mohfw.gov.in/" target="_blank" class="btn btn-primary">Visit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="text-center py-4">
+    <div class="container">
+      <p>&copy; 2024 Covid-19 Testing Management System. All rights reserved.</p>
     </div>
   </footer>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="vendor/jquery-easing/jquery.easing.min.js
+  <!-- Custom scripts -->
+  <script src="js/scrolling-nav.js"></script>
 
+</body>
+
+</html>
