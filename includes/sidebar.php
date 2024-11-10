@@ -6,9 +6,10 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-virus"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">COVID19-TMS</div>
-    </a>
+        <a class="sidebar-brand-text mx-3" href="http://localhost/covid-tms/" style="color: inherit; text-decoration: none; font-weight: bold;">COVID19-TMS</a>
+        </a>
 
+    
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 

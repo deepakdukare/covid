@@ -66,20 +66,22 @@ if (isset($_POST['login'])) {
     </style>
 </head>
 
-<body>
-    <div class="container">
+<body style="background-color: #a3f2fd;">
+    <div class="container" style="background-color: #a3f2fd;">
         <!-- Outer Row -->
-        <div class="row justify-content-center">
+        <div class="row justify-content-center" style="background-color: #a3f2fd;">
             <div class="col-xl-10 col-lg-12 col-md-9">
-                <h3 align="center" style="margin-top:4%;color:#007bff">Covid Testing Management System</h3>
                 <div class="card o-hidden border-0 shadow-lg my-5 login-card">
                     <div class="card-body p-0">
+                    <h3 align="center" style="margin-top:4%;color:#007bff">Covid Testing Management System</h3>
                         <div class="row">
-                            <div class="col-lg-6 d-none d-lg-block bg-login-image"></div>
+                            <div class="col-lg-6 d-none d-lg-block bg-login-image">
+                            <img src="img/login.avif" alt="Logo" class="login-image"> 
+                            </div>
                             <div class="col-lg-6">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <img src="img/login.avif" alt="Logo" class="login-image"> <!-- Your logo image -->
+                                        <!-- Your logo image -->
                                         <h1 class="h4 login-title mb-4">Welcome Back!</h1>
                                     </div>
                                     <form name="login" method="post">

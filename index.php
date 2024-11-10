@@ -66,7 +66,7 @@
   </nav>
 
   <!-- Header Section -->
-  <header class="text-black text-center py-5" style="background-color: yellow;">
+  <header class="text-black text-center py-5" style="background-color: aquamarine;">
     <div class="container">
       <h1>Covid-19 Testing Management System</h1>
       <p class="lead">Manage and track Covid-19 testing efficiently</p>
@@ -74,8 +74,8 @@
   </header>
 
   <!-- About Section -->
-  <section id="about" class="py-5 bg-light">
-    <div class="container">
+  <section id="about" class="py-5" style="background-color: #f8f9fa;">
+        <div class="container">
       <div class="row">
         <div class="col-md-6">
           <img src="img/covid-about.jpg.webp" alt="About Covid-19" class="img-fluid rounded">
@@ -90,7 +90,7 @@
   </section>
 
   <!-- Symptoms Section -->
-  <section id="symptoms" class="py-5">
+  <section id="symptoms" class="py-5" style="background-color: #ffebea;">
     <div class="container">
       <h2 class="text-center mb-4">Symptoms of Covid-19</h2>
       <div class="row">
@@ -126,7 +126,7 @@
   </section>
 
   <!-- Prevention Section -->
-  <section id="prevention" class="py-5 bg-light">
+  <section id="prevention" class="py-5" style="background-color: #e8f5e9;">
     <div class="container">
       <h2 class="text-center mb-4">Prevention Tips</h2>
       <div class="row">
@@ -155,7 +155,7 @@
   </section>
 
   <!-- Vaccination Information Section -->
-  <section id="vaccination" class="py-5">
+  <section id="vaccination" class="py-5" style="background-color: #e3f2fd;">
     <div class="container">
       <h2 class="text-center mb-4">Vaccination Information</h2>
       <p class="text-center">Vaccines are safe and effective in preventing Covid-19 and reducing the severity of the disease. Here’s what you need to know:</p>
@@ -180,7 +180,7 @@
   </section>
 
   <!-- Testing Centers Section -->
-  <section id="testing-centers" class="py-5 bg-light">
+  <section id="testing-centers" class="py-5" style="background-color: #f1f8e9;">
     <div class="container">
       <h2 class="text-center mb-4">Covid-19 Testing Centers</h2>
       <p class="text-center">Find the nearest testing center to get tested for Covid-19. Below is a list of testing centers available:</p>
@@ -193,7 +193,7 @@
   </section>
 
   <!-- Common Myths Section -->
-  <section id="common-myths" class="py-5">
+  <section id="common-myths" class="py-5" style="background-color: #fff3e0;">
     <div class="container">
       <h2 class="text-center mb-4">Common Myths About Covid-19</h2>
       <p class="text-center">Let's debunk some common myths about Covid-19:</p>
@@ -204,48 +204,99 @@
       </ul>
     </div>
   </section>
-
-  <!-- Resources Section -->
-  <section id="resources" class="py-5 bg-light">
+    <!-- Resources Section --> 
+    <section id="resources" class="py-5" style="background-color: #ade7f9;">
     <div class="container">
-      <h2 class="text-center mb-4">Resources for Further Information</h2>
-      <p class="text-center">Stay informed with reliable sources:</p>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body text-center">
-              <h5 class="card-title">World Health Organization (WHO)</h5>
-              <p class="card-text">Visit the WHO website for the latest updates on Covid-19 guidelines and resources.</p>
-              <a href="https://www.who.int/" target="_blank" class="btn btn-primary">Visit</a>
-            </div>
+    <h2 class="text-center mb-4">Resources for Further Information</h2>
+    <p class="text-center">Stay informed with reliable sources:</p>
+    <div class="row">
+      <!-- WHO Resource -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">World Health Organization (WHO)</h5>
+            <p class="card-text">Visit the WHO website for the latest updates on Covid-19 guidelines and resources.</p>
+            <a href="https://www.who.int/" target="_blank" class="btn btn-primary">Visit</a>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body text-center">
-              <h5 class="card-title">Centers for Disease Control and Prevention (CDC)</h5>
-              <p class="card-text">Access essential information about Covid-19 safety and prevention measures.</p>
-              <a href="https://www.cdc.gov/" target="_blank" class="btn btn-primary">Visit</a>
-            </div>
+      </div>
+      
+      <!-- CDC Resource -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">Centers for Disease Control and Prevention (CDC)</h5>
+            <p class="card-text">Access essential information about Covid-19 safety and prevention measures.</p>
+            <a href="https://www.cdc.gov/" target="_blank" class="btn btn-primary">Visit</a>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card border-0 shadow-sm mb-4">
-            <div class="card-body text-center">
-              <h5 class="card-title">Ministry of Health and Family Welfare</h5>
-              <p class="card-text">Get updates and guidelines from India's Ministry of Health regarding Covid-19.</p>
-              <a href="https://www.mohfw.gov.in/" target="_blank" class="btn btn-primary">Visit</a>
-            </div>
+      </div>
+      
+      <!-- Ministry of Health Resource -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">Ministry of Health and Family Welfare</h5>
+            <p class="card-text">Get updates and guidelines from India's Ministry of Health regarding Covid-19.</p>
+            <a href="https://www.mohfw.gov.in/" target="_blank" class="btn btn-primary">Visit</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- CoWIN Resource -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">CoWIN - COVID Vaccination Registration</h5>
+            <p class="card-text">Register for Covid-19 vaccinations through the CoWIN platform.</p>
+            <a href="https://www.cowin.gov.in/" target="_blank" class="btn btn-primary">Visit</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ORS Resource -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">ORS - Online Registration System for Healthcare</h5>
+            <p class="card-text">Access online healthcare services and registrations through the ORS portal.</p>
+            <a href="https://ors.gov.in/orsportal/" target="_blank" class="btn btn-primary">Visit</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- MCC Resource -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">MCC - Medical Counselling Committee</h5>
+            <p class="card-text">Find information and resources related to medical counseling in India.</p>
+            <a href="https://mcc.nic.in/" target="_blank" class="btn btn-primary">Visit</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- NHM Resource -->
+      <div class="col-md-4">
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body text-center">
+            <h5 class="card-title">NHM - National Health Mission</h5>
+            <p class="card-text">Learn about health missions and programs to improve healthcare in India.</p>
+            <a href="http://nhm.gov.in/" target="_blank" class="btn btn-primary">Visit</a>
           </div>
         </div>
       </div>
     </div>
+  </div>
+
   </section>
 
   <!-- Footer Section -->
   <footer class="text-center py-4">
     <div class="container">
-      <p>&copy; 2024 Covid-19 Testing Management System. All rights reserved.</p>
+      <p>&copy; 2024 Covid-19 Testing Management System.</p>
+      <p>&copy; Deepak Dukare. All rights reserved.</p>
+
     </div>
   </footer>
 
